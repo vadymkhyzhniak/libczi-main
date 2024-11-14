@@ -206,7 +206,7 @@ jobs:
         run: OpenCppCoverage.exe --export_type cobertura:${{github.workspace}}\coverage.xml --config_file "${{github.workspace}}\opencppcoverage.txt" -- libCZI_UnitTests.exe
 
       - name: Upload Coverage
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         # Note: we want to upload coverage only for the upstream-repository, not for forks
         if: ${{ (github.repository == 'ZEISS/libczi') && (matrix.OS == 'windows-latest') && (matrix.build == 'Debug') }}
         with:
